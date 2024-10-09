@@ -1,53 +1,24 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/sLogo2.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calvin's Portfolio </title>
-    <style>
-      .main {
-        width: 100vw;
-        min-height: 100vh;
-        position: fixed;
-        display: flex;
-        justify-content: center;
-        padding: 120px 24px 160px 24px;
-        pointer-events: none;
-      }
-
-      .main:before {
-        background: radial-gradient(circle, rgba(255, 255, 255, 0) 0, #fafafa 100%);
-        position: absolute;
-        content: "";
-        z-index: 2;
-        width: 100%;
-        height: 100%;
-        top: 0;
-      }
-
-      /* Dark Theme for main:before */
-      .dark-theme .main:before {
-        background: radial-gradient(circle at 50% 50%, #2e2e2e, #2a2a2a, #272727, #232323, #202020, #1c1c1c, #191919, #151515, #111111, #0c0c0c, #060606, #000000);
-      }
-    </style>
-  </head>
-  <body style="margin: 0;">
-    <div class="main"></div>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    <script>
-      // JavaScript to check the sessionStorage theme and apply styles dynamically
-      const theme = sessionStorage.getItem('theme') || 'light'; // Default to 'light' if not found
-      const body = document.body;
-
-      if (theme === 'dark') {
-        body.classList.add('dark-theme');
-      } else {
-        body.classList.remove('dark-theme');
-      }
-      // Optional: Log current theme
-      console.log("Current theme:", theme);
-    </script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/png" href="/sLogo2.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calvin's Portfolio</title>
+		<style>
+			@font-face {
+				font-family: 'avanth';
+				src: url('/fonts/AVANTN.ttf') format('truetype'); /* Adjust the path as necessary */
+				font-weight: normal;
+				font-style: normal;
+			}
+			* {
+				font-family: 'avanth', 'sans-serif';
+			}
+		</style>
+	</head>
+	<body style="margin: 0">
+		<div id="root"></div>
+		<script type="module" src="/src/main.tsx"></script>
+	</body>
 </html>
