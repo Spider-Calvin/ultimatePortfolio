@@ -2,9 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
+.button {
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	transition: 0.3s;
+}
+
+/* BUTTON UP */
+.label-up {
+	display: block;
+	height: 100%;
+	position: relative;
+	top: 0%;
+	transition: 0.3s;
+}
+
+.button:hover .label-up {
+	top: -100%;
+}
+
+/* BUTTON DOWN */
+.label-down {
+	display: block;
+	height: 100%;
+	position: relative;
+	top: -100%;
+	transition: 0.3s;
+}
+
+.button:hover .label-down {
+	top: 0%;
+}
+
+.noBar::-webkit-scrollbar {
+	width: 0px;
+}
+
+/* Track (background) */
+.noBar::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+/* Handle (thumb) */
+.noBar::-webkit-scrollbar-thumb {
+	background: #001e5757;
+	border-radius: 0px;
+}
+
 .main {
-	height: 100vh;
-	background-color: #0d0d0d;
+	background-color: #e1e1e1;
+	/* background-image: url('/assets/images/bg.png'); */
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .main .mask,
@@ -14,16 +65,10 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: #afa18f;
+	color: #4f483f;
 	font-size: 64px;
 	line-height: 66px;
 	cursor: default;
-}
-
-.main .mask p,
-.main .body p {
-	width: 1000px;
-	padding: 40px;
 }
 
 .main .mask span,
@@ -37,5 +82,17 @@
 	mask-size: 40px;
 	background: #ec4e39;
 	position: absolute;
-	color: black;
+	color: #e1e1e1;
+}
+
+.violet-gradient {
+	background: #4f483f;
+	background: linear-gradient(-90deg, #4f483f 0%, rgba(60, 51, 80, 0) 100%);
+	background: -webkit-linear-gradient(-90deg, #4f483f 0%, rgba(60, 51, 80, 0) 100%);
+}
+
+.violet-gradient-back {
+	background: #e1e1e1;
+	background: linear-gradient(-90deg, #e1e1e1 0%, rgba(60, 51, 80, 0) 100%);
+	background: -webkit-linear-gradient(-90deg, #e1e1e1 0%, rgba(60, 51, 80, 0) 100%);
 }
