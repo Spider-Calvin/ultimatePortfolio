@@ -6,14 +6,16 @@ interface HeroProps {
 }
 
 const S = {
-	title1: `xs:text-[50px] mt-2 text-[40px] font-black sm:text-[60px] lg:text-[80px] lg:leading-[98px]`,
-	caption1: `xs:text-[20px] mt-2 text-[16px] font-medium sm:text-[26px] lg:text-[30px] lg:leading-[40px]`,
+	title1: `xs:text-[40px] mt-2 text-[30px] font-black sm:text-[50px] lg:text-[70px] lg:leading-[95px]`,
+	caption1: `xs:text-[15px] mt-2 text-[12px] font-medium sm:text-[22px] lg:text-[26px] lg:leading-[45px]`,
 	div1: `w-[45vw]`,
 };
 
+import { HeroActionBackground, HeroActionForeground } from '@/components/HeroAction';
+
 export function HeroForeground({ setIsHovered }: HeroProps) {
 	return (
-		<section className='flex h-screen w-screen flex-row items-center justify-between px-44'>
+		<section className='flex h-screen w-screen flex-row items-center px-44'>
 			<div className='flex items-start gap-5 sm:top-[120px]'>
 				<div className='mt-5 flex flex-col items-center justify-center'>
 					<div className='h-5 w-5 rounded-full bg-[#4f483f]' />
@@ -29,28 +31,21 @@ export function HeroForeground({ setIsHovered }: HeroProps) {
 					</h1>
 					<p className={S.caption1}>
 						2 years of Experience in
+						<br className='hidden sm:block' />
 						<span> FULL STACK DEVELOPMENT</span>
 						<br className='hidden sm:block' />
 						Building Scalable Web & Mobile Applications
 					</p>
 				</div>
 			</div>
-			<div>
-				<img
-					onMouseEnter={() => setIsHovered(true)}
-					onMouseLeave={() => setIsHovered(false)}
-					src='/assets/images/man.png'
-					alt=''
-					className='h-96 w-96'
-				/>
-			</div>
+			<HeroActionForeground setIsHovered={setIsHovered} />
 		</section>
 	);
 }
 
 export function HeroBackground() {
 	return (
-		<section className='flex h-screen w-screen flex-row items-center justify-between px-44'>
+		<section className='flex h-screen w-screen flex-row items-center px-44'>
 			<div className='flex items-start gap-5 sm:top-[120px]'>
 				<div className='mt-5 flex flex-col items-center justify-center'>
 					<div className='h-5 w-5 rounded-full bg-[#4f483f]' />
@@ -68,9 +63,7 @@ export function HeroBackground() {
 					</p>
 				</div>
 			</div>
-			<div>
-				<img src='/assets/images/man.png' alt='' className='h-96 w-96' />
-			</div>
+			<HeroActionBackground />
 		</section>
 	);
 }
