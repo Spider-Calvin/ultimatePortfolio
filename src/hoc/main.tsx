@@ -29,7 +29,7 @@ const MainWrapper = (Component: React.ComponentType<MainWrapperProps>) =>
 		return (
 			<div className='relative h-screen'>
 				<Component isHovered={isHovered} setIsHovered={setIsHovered} x={x} y={y} size={size} />
-				<div className='absolute bottom-0 h-screen w-44 p-6'>
+				<div className='absolute bottom-0 hidden h-screen w-44 bg-red-200 p-6 lg:flex'>
 					<div className='mt-14 w-2'>
 						<div
 							className='button h-8 -rotate-90 leading-8'
@@ -44,7 +44,7 @@ const MainWrapper = (Component: React.ComponentType<MainWrapperProps>) =>
 						</div>
 					</div>
 				</div>
-				<div className='absolute bottom-0 right-0 h-screen w-44'>
+				<div className='absolute bottom-0 right-0 hidden h-screen w-44 bg-red-200 lg:flex'>
 					<div
 						className='mt-5 flex flex-col gap-y-2 p-6'
 						onMouseEnter={() => setHideMask(true)}

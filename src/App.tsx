@@ -5,13 +5,14 @@ import { HeroBackground, HeroForeground } from '@/sections/Hero';
 import MainWrapper from '@/hoc/main';
 
 interface AppProps {
+	isHovered: boolean;
 	setIsHovered: React.Dispatch<React.SetStateAction<boolean>>;
 	x: number;
 	y: number;
 	size: number;
 }
 
-function App({ setIsHovered, x, y, size }: AppProps) {
+function App({ isHovered, setIsHovered, x, y, size }: AppProps) {
 	// Create refs for both scrollable elements
 	const maskRef = useRef<HTMLDivElement>(null);
 	const bodyRef = useRef<HTMLDivElement>(null);
@@ -37,7 +38,7 @@ function App({ setIsHovered, x, y, size }: AppProps) {
 				}}
 				transition={{ type: 'tween', ease: 'backOut', duration: 0.5 }}>
 				<div className='h-screen w-screen overflow-y-scroll' ref={maskRef}>
-					<HeroBackground />
+					<HeroBackground isHovered={isHovered} />
 
 					<div className='h-screen'>
 						<p className='font-bold'>
@@ -55,7 +56,7 @@ function App({ setIsHovered, x, y, size }: AppProps) {
 					ref={bodyRef}
 					onScroll={() => syncScroll(bodyRef, maskRef)} // Optional scroll syncing
 				>
-					<HeroForeground setIsHovered={setIsHovered} />
+					<HeroForeground setIsHovered={setIsHovered} isHovered={isHovered} />
 					<div className='h-screen'>
 						<p
 							className='font-bold'
